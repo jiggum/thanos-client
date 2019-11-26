@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState, useCallback } from 'react'
 import Dropzone from 'react-dropzone'
+import classnames from 'classnames'
 
 import styles from './DropZone.scss'
 
@@ -9,10 +10,23 @@ interface DropZoneProps {
 }
 
 function DropZone({ onDropAccepted, onDropRejected }: DropZoneProps) {
+  const [onDrag, setOnDrag] = useState(false)
+
+  const onDragEnter = useCallback(() => {
+    setOnDrag(true)
+  }, [])
+
+  const onDragLeave = useCallback(() => {
+    setOnDrag(false)
+  }, [])
+
   return (
     <Dropzone
       onDropAccepted={onDropAccepted}
       onDropRejected={onDropRejected}
+      onDragEnter={onDragEnter}
+      onDragLeave={onDragLeave}
+      onDrop={onDragLeave}
       multiple={false}
       accept="image/jpeg, image/png"
     >
@@ -20,7 +34,9 @@ function DropZone({ onDropAccepted, onDropRejected }: DropZoneProps) {
         <section>
           <div
             {...getRootProps({
-              className: styles.wrapper,
+              className: classnames(styles.wrapper, {
+                [styles.wrapperActive]: onDrag,
+              }),
             })}
           >
             <input {...getInputProps()} />

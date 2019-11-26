@@ -6,12 +6,17 @@
   justify-content: center;
   border-width: 2px;
   border-radius: 2px;
-  border-color: #eeeeee;
+  border-color: #e0e0e0;
   border-style: dashed;
-  background-color: #fafafa;
   color: #bdbdbd;
   outline: none;
   font-size: 25px;
-  transition: border .24s ease-in-out;
+  transition: border .2s ease-in-out, color .2s ease-in-out;
   cursor: pointer;
+  margin-top: 50px;
+}
+
+.wrapperActive {
+  border-color: #929;
+  color: #929;
 }
