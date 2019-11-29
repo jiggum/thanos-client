@@ -51,6 +51,7 @@
     "react-dom": "^16.10.2",
     "react-dropzone": "^10.2.1",
     "react-dust-effect": "^0.0.3",
+    "react-image-file-resizer": "^0.2.1",
     "react-thanos-glove": "^0.0.4"
   },
   "devDependencies": {

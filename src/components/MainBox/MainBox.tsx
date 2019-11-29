@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import axios from 'axios'
+import Resizer from 'react-image-file-resizer'
 import { useSnackbar } from 'notistack'
 import { getUrlWithTimeStamp } from 'utils'
 import DropZone from 'components/DropZone'
@@ -13,39 +14,40 @@ const MainBox = () => {
   const [pending, setPending] = useState(false)
   const { enqueueSnackbar } = useSnackbar()
 
-  const loadInputImg = useCallback(image => {
-    const reader = new window.FileReader()
-    reader.onload = e => {
-      setInputImgSrc(e.target!.result as string)
-    }
-    reader.readAsDataURL(image)
+  const requestConvert = useCallback(image => {
+    const formData = new window.FormData()
+    formData.append('image', image)
+    setPending(true)
+    console.log(image)
+    axios
+      .post('http://localhost:5000/thanos', formData)
+      .then(res => {
+        const {
+          data: { background, persons },
+        } = res
+        setBackgroundImgSrc(background)
+        setPersonsImgSrc(persons)
+        setPending(false)
+      })
+      .catch(err => {
+        enqueueSnackbar(err, {
+          variant: 'error',
+        })
+        setPending(false)
+      })
   }, [])
 
   const onDropAccepted = useCallback(
     (files: File[]) => {
       const image = files[0]
-      loadInputImg(image)
-      const formData = new window.FormData()
-      formData.append('image', image)
-      setPending(true)
-      axios
-        .post('http://localhost:5000/thanos', formData)
-        .then(res => {
-          const {
-            data: { background, persons },
-          } = res
-          setBackgroundImgSrc(background)
-          setPersonsImgSrc(persons)
-          setPending(false)
-        })
-        .catch(err => {
-          enqueueSnackbar(err, {
-            variant: 'error',
-          })
-          setPending(false)
-        })
+      const reader = new window.FileReader()
+      reader.onload = e => {
+        setInputImgSrc(e.target!.result as string)
+      }
+      reader.readAsDataURL(image)
+      Resizer.imageFileResizer(image, 900, 504, 'PNG', 100, 0, requestConvert, 'blob')
     },
-    [loadInputImg],
+    [requestConvert],
   )
 
   const onDropRejected = useCallback(files => {
