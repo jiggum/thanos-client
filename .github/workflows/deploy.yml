@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout source code.
         uses: actions/checkout@master
@@ -15,16 +15,20 @@ jobs:
         uses: actions/cache@v1
         with:
           path: node_modules
-          key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.OS }}-build-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.OS }}-build-
             ${{ runner.OS }}-
 
       - name: Install Dependencies
-        run: npm install
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
 
       - name: Build
-        run: npm run build
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: build
 
       - name: Deploy
         env:
@@ -34,4 +38,4 @@ jobs:
           aws s3 cp \
             --recursive \
             --region ap-northeast-2 \
-            dist s3://thanossnap.org
+            build s3://thanossnap.org
