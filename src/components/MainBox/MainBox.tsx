@@ -1,8 +1,9 @@
 import React, { useState, useCallback } from 'react'
 import axios from 'axios'
 import { useSnackbar } from 'notistack'
+import { getUrlWithTimeStamp } from 'utils'
 import DropZone from 'components/DropZone'
-import ImageBox from 'components/ImageBox'
+import Result from 'components/Result'
 import styles from './MainBox.scss'
 
 const MainBox = () => {
@@ -56,10 +57,10 @@ const MainBox = () => {
   return (
     <div className={styles.wrapper}>
       {inputImgSrc ? (
-        <ImageBox
+        <Result
           inputImgSrc={inputImgSrc}
-          backgroundImgSrc={backgroundImgSrc}
-          personsImgSrc={personsImgSrc}
+          backgroundImgSrc={getUrlWithTimeStamp(backgroundImgSrc)}
+          personsImgSrc={getUrlWithTimeStamp(personsImgSrc)}
           pending={pending}
         />
       ) : (

@@ -1,28 +1,21 @@
 import React from 'react'
+import classnames from 'classnames'
 import CircularProgress from '@material-ui/core/CircularProgress'
-import Result from 'components/Result'
 import styles from './ImageBox.scss'
 
 interface ImageBoxProps {
-  inputImgSrc: string
-  backgroundImgSrc: string
-  personsImgSrc: string
-  pending: boolean
+  className?: string
+  children?: React.ReactNode
+  pending?: boolean
 }
 
-const ImageBox = ({ inputImgSrc, backgroundImgSrc, personsImgSrc, pending }: ImageBoxProps) => (
-  <div className={styles.wrapper}>
-    {pending ? (
-      <>
-        <div className={styles.input}>
-          <img src={inputImgSrc} role="presentation" alt="" className={styles.inputImg} />
-        </div>
-        <div className={styles.progress}>
-          <CircularProgress />
-        </div>
-      </>
-    ) : (
-      <Result backgroundImgSrc={backgroundImgSrc} personsImgSrc={personsImgSrc} />
+const ImageBox = ({ className, children, pending }: ImageBoxProps) => (
+  <div className={classnames(styles.wrapper, className)}>
+    {children}
+    {pending && (
+      <div className={styles.progress}>
+        <CircularProgress />
+      </div>
     )}
   </div>
 )

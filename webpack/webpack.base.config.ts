@@ -7,6 +7,7 @@ const AutoprefixerPlugin = require('autoprefixer')
 module.exports = {
   entry: path.join(__dirname, '..', 'src', 'index.tsx'),
   resolve: {
+    extensions: ['.js', '.ts', '.tsx'],
     modules: [path.join(__dirname, '..', 'src'), 'node_modules'],
   },
   module: {
@@ -47,7 +48,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.png$/,
+        test: /\.(png|jpg)$/,
         use: ['file-loader'],
       },
     ],

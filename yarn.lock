@@ -6096,6 +6096,13 @@ react-dropzone@*, react-dropzone@^10.2.1:
     file-selector "^0.1.12"
     prop-types "^15.7.2"
 
+react-dust-effect@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/react-dust-effect/-/react-dust-effect-0.0.3.tgz#bc02a2f20cbbf896ba5a18f3359f5e4a16ec07d7"
+  integrity sha512-9q+58gzRYDvudoAXVhXDRqcujI94TEAjx/rqNCcJp7Er4DljSroA1YP/UD0DaVy7lIm7IYYrBkHoxFm2lbaq9w==
+  dependencies:
+    prop-types "^15.7.2"
+
 react-is@^16.7.0, react-is@^16.8.6:
   version "16.12.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.12.0.tgz#2cc0fe0fba742d97fd527c42a13bec4eeb06241c"
@@ -6105,6 +6112,13 @@ react-is@^16.8.1:
   version "16.10.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.10.2.tgz#984120fd4d16800e9a738208ab1fba422d23b5ab"
   integrity sha512-INBT1QEgtcCCgvccr5/86CfD71fw9EPmDxgiJX4I2Ddr6ZsV6iFXsuby+qWJPtmNuMY0zByTsG4468P7nHuNWA==
+
+react-thanos-glove@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/react-thanos-glove/-/react-thanos-glove-0.0.4.tgz#dd5fcddac8db988bc6f33a398aacdaf7eab25d69"
+  integrity sha512-VURPfLHo4TU9yuuFAa6MtxaDy9VeVxpgodHuuef77Q2AxCE8hvVDj7VMDBApTQzG7iNlnTI9zmJySfX05+BdrA==
+  dependencies:
+    prop-types "^15.7.2"
 
 react-transition-group@^4.3.0:
   version "4.3.0"
