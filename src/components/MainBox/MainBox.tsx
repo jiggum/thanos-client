@@ -18,9 +18,8 @@ const MainBox = () => {
     const formData = new window.FormData()
     formData.append('image', image)
     setPending(true)
-    console.log(image)
     axios
-      .post('http://localhost:5000/thanos', formData)
+      .post('http://api.thanossnap.org/thanos', formData)
       .then(res => {
         const {
           data: { background, persons },
@@ -30,10 +29,11 @@ const MainBox = () => {
         setPending(false)
       })
       .catch(err => {
-        enqueueSnackbar(err, {
+        enqueueSnackbar('Something was wrong! Try again', {
           variant: 'error',
         })
         setPending(false)
+        console.error(err)
       })
   }, [])
 

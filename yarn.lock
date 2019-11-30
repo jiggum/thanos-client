@@ -6096,10 +6096,10 @@ react-dropzone@*, react-dropzone@^10.2.1:
     file-selector "^0.1.12"
     prop-types "^15.7.2"
 
-react-dust-effect@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/react-dust-effect/-/react-dust-effect-0.0.3.tgz#bc02a2f20cbbf896ba5a18f3359f5e4a16ec07d7"
-  integrity sha512-9q+58gzRYDvudoAXVhXDRqcujI94TEAjx/rqNCcJp7Er4DljSroA1YP/UD0DaVy7lIm7IYYrBkHoxFm2lbaq9w==
+react-dust-effect@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/react-dust-effect/-/react-dust-effect-0.0.4.tgz#077f8c637b5b3287ab51cb4ca7be7256a82fd656"
+  integrity sha512-Tp2tjbYoxzEX6n8sFpinmsAUou5bIITMwLWg22YJ1DsXWhVoJVWvad7sVqbqoh7hYz6KTolweo0DBbMocLULsQ==
   dependencies:
     prop-types "^15.7.2"
 

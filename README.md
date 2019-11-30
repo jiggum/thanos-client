@@ -1,4 +1,5 @@
 # Thanos Client
+Client for http://thanossnap.org
 
 #### Install
 `yarn install`

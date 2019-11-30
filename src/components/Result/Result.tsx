@@ -47,13 +47,13 @@ const Result = ({ inputImgSrc, backgroundImgSrc, personsImgSrc, pending }: Resul
               src={backgroundImgSrc}
               role="presentation"
               alt=""
-              className={classnames(styles.img, styles.overlapImg)}
+              className={classnames(styles.img, styles.overlapImg, styles.backgroundImg)}
               onLoad={handleBackgroundLoad}
             />
             <DustEffect
               src={personsImgSrc}
               show={showPersons}
-              className={classnames(styles.img, styles.overlapImg)}
+              className={classnames(styles.img, styles.overlapImg, styles.personContainer)}
               imgProps={{
                 onLoad: handlePersonsLoad,
                 className: styles.personImg,
