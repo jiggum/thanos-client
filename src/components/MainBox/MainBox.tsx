@@ -10,7 +10,8 @@ import styles from './MainBox.scss'
 const MainBox = () => {
   const [inputImgSrc, setInputImgSrc] = useState('')
   const [backgroundImgSrc, setBackgroundImgSrc] = useState('')
-  const [personsImgSrc, setPersonsImgSrc] = useState('')
+  const [persons1ImgSrc, setPersons1ImgSrc] = useState('')
+  const [persons2ImgSrc, setPersons2ImgSrc] = useState('')
   const [pending, setPending] = useState(false)
   const { enqueueSnackbar } = useSnackbar()
 
@@ -19,13 +20,23 @@ const MainBox = () => {
     formData.append('image', image)
     setPending(true)
     axios
-      .post('http://api.thanossnap.org/thanos', formData)
-      .then(res => {
+      .post('https://api.thanossnap.org/thanos', formData)
+      .then((res: any) => {
         const {
-          data: { background, persons },
+          data: { code, data, message },
         } = res
-        setBackgroundImgSrc(background)
-        setPersonsImgSrc(persons)
+        if (code === 'ok') {
+          const { background, persons1, persons2 } = data
+          setBackgroundImgSrc(background)
+          if (persons1) setPersons1ImgSrc(persons1)
+          if (persons2) setPersons2ImgSrc(persons2)
+        }
+        if (code === 'error') {
+          enqueueSnackbar(message as string, {
+            variant: 'error',
+          })
+          setInputImgSrc('')
+        }
         setPending(false)
       })
       .catch(err => {
@@ -33,6 +44,7 @@ const MainBox = () => {
           variant: 'error',
         })
         setPending(false)
+        setInputImgSrc('')
         console.error(err)
       })
   }, [])
@@ -62,7 +74,8 @@ const MainBox = () => {
         <Result
           inputImgSrc={inputImgSrc}
           backgroundImgSrc={getUrlWithTimeStamp(backgroundImgSrc)}
-          personsImgSrc={getUrlWithTimeStamp(personsImgSrc)}
+          persons1ImgSrc={getUrlWithTimeStamp(persons1ImgSrc)}
+          persons2ImgSrc={getUrlWithTimeStamp(persons2ImgSrc)}
           pending={pending}
         />
       ) : (

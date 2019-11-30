@@ -1,7 +1,8 @@
 import React from 'react'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Container from '@material-ui/core/Container'
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
+import { createMuiTheme, ThemeProvider, withStyles } from '@material-ui/core/styles'
+
 import { SnackbarProvider } from 'notistack'
 
 import Header from 'components/Header'
@@ -21,7 +22,17 @@ const theme = createMuiTheme({
   },
 })
 
-const App = () => (
+const snackbarRootStyle = {
+  variantError: {
+    justifyContent: 'center',
+  },
+}
+
+interface AppProps {
+  classes: any
+}
+
+const App = ({ classes }: AppProps) => (
   <ThemeProvider theme={theme}>
     <SnackbarProvider
       hideIconVariant
@@ -29,6 +40,7 @@ const App = () => (
         vertical: 'top',
         horizontal: 'center',
       }}
+      classes={classes}
     >
       <CssBaseline />
       <Container maxWidth="md" className={styles.wrapper}>
@@ -39,4 +51,4 @@ const App = () => (
   </ThemeProvider>
 )
 
-export default App
+export default withStyles(snackbarRootStyle)(App)
