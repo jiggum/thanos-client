@@ -1,5 +1,6 @@
 .wrapper {
   position: relative;
+  height: 504px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -16,21 +17,20 @@
 
 .img {
   display: flex;
-  max-width: 100%;
   max-height: 100%;
 }
 
 .baseImg {
   position: relative;
+  max-height: 504px;
 }
 
 .personContainer {
-  width: 100%;
 }
 
 .personImg {
-  max-width: 100%;
   max-height: 100%;
+  width: auto;
 }
 
 .glove {
@@ -50,7 +50,6 @@
 
 .backgroundImg {
   max-height: 100%;
-  max-width: 100%;
 }
 
 .hide {

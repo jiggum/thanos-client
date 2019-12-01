@@ -82,6 +82,9 @@ const Result = ({
                 src={persons2ImgSrc}
                 show={showPersons2}
                 className={classnames(styles.img, styles.overlapImg, styles.personContainer)}
+                option={{
+                  blur: 0.5,
+                }}
                 imgProps={{
                   onLoad: handlePersons2Load,
                   className: styles.personImg,
@@ -92,6 +95,9 @@ const Result = ({
               src={persons1ImgSrc}
               show={showPersons1}
               className={classnames(styles.img, styles.overlapImg, styles.personContainer)}
+              option={{
+                blur: 0.5,
+              }}
               imgProps={{
                 onLoad: handlePersons1Load,
                 className: styles.personImg,
