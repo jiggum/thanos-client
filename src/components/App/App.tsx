@@ -2,11 +2,11 @@ import React from 'react'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Container from '@material-ui/core/Container'
 import { createMuiTheme, ThemeProvider, withStyles } from '@material-ui/core/styles'
-
 import { SnackbarProvider } from 'notistack'
 
 import Header from 'components/Header'
 import MainBox from 'components/MainBox'
+import Footer from 'components/Footer'
 import styles from './App.scss'
 
 const theme = createMuiTheme({
@@ -46,6 +46,7 @@ const App = ({ classes }: AppProps) => (
       <Container maxWidth="md" className={styles.wrapper}>
         <Header />
         <MainBox />
+        <Footer />
       </Container>
     </SnackbarProvider>
   </ThemeProvider>

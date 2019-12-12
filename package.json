@@ -1,7 +1,7 @@
 {
-  "name": "sparcs-status-page",
-  "version": "1.0.0",
-  "description": "SPARCS services' status page",
+  "name": "thanossnap",
+  "version": "1.0.1",
+  "description": "Client for https://thanossnap.org",
   "main": "dist/index.html",
   "config": {
     "prettier_target": "./*.{ts,js} ./**/*.{ts,tsx} !./dist/**",
@@ -25,18 +25,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sparcs-kaist/status-page.git"
+    "url": "git+https://github.com/jiggum/thanos-client.git"
   },
   "keywords": [
-    "sparcs",
-    "status"
+    "thanossnap",
+    "thanos",
+    "inpainting"
   ],
   "author": "jiggum <0s.dongmin@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sparcs-kaist/status-page/issues"
+    "url": "https://github.com/jiggum/thanos-client/issues"
   },
-  "homepage": "https://github.com/sparcs-kaist/status-page#readme",
+  "homepage": "https://thanossnap.org",
   "browserslist": [
     "last 2 version",
     "> 1%",
@@ -50,9 +51,9 @@
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-dropzone": "^10.2.1",
-    "react-dust-effect": "^0.0.4",
+    "react-dust-effect": "^0.0.5",
     "react-image-file-resizer": "^0.2.1",
-    "react-thanos-glove": "^0.0.4"
+    "react-thanos-glove": "^0.0.5"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
