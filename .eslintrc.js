@@ -23,5 +23,6 @@ module.exports = {
         packageDir: './',
       },
     ],
+    'import/extensions': [0, 'always', { 'tsx': 'never' }]
   },
 }

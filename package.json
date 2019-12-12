@@ -1,6 +1,6 @@
 {
   "name": "thanossnap",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Client for https://thanossnap.org",
   "main": "dist/index.html",
   "config": {

@@ -45,6 +45,7 @@ const MainBox = () => {
         })
         setPending(false)
         setInputImgSrc('')
+        // eslint-disable-next-line no-console
         console.error(err)
       })
   }, [])
