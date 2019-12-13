@@ -106,7 +106,7 @@ const Result = ({
           </>
         )}
         <img
-          src={inputImgSrc}
+          src={loded ? backgroundImgSrc : inputImgSrc}
           role="presentation"
           alt=""
           className={classnames(styles.img, styles.baseImg, {
