@@ -63,8 +63,7 @@ const Result = ({
     setPersons2Loaded(true)
   }, [])
 
-  const loded =
-    inputLoaded && backgroundLoaded && persons1Loaded && (!persons2ImgSrc || persons2Loaded)
+  const loded = backgroundLoaded && persons1Loaded && (!persons2ImgSrc || persons2Loaded)
 
   return (
     <div className={styles.wrapper}>
@@ -74,7 +73,7 @@ const Result = ({
         })}
         pending={pending || !loded}
       >
-        {!pending && (
+        {!pending && inputLoaded && (
           <>
             <img
               src={backgroundImgSrc}
