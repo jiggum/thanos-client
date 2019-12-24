@@ -22,6 +22,7 @@ const Result = ({
 }: ResultProps) => {
   const [showPersons1, setShowPersons1] = useState(true)
   const [showPersons2, setShowPersons2] = useState(true)
+  const [inputLoaded, setInputLoaded] = useState(false)
   const [backgroundLoaded, setBackgroundLoaded] = useState(false)
   const [persons1Loaded, setPersons1Loaded] = useState(false)
   const [persons2Loaded, setPersons2Loaded] = useState(false)
@@ -46,6 +47,10 @@ const Result = ({
     }
   }, [persons1ImgSrc, persons2ImgSrc, showPersons1, showPersons2, gloveType])
 
+  const handleInputLoad = useCallback(() => {
+    setInputLoaded(true)
+  }, [])
+
   const handleBackgroundLoad = useCallback(() => {
     setBackgroundLoaded(true)
   }, [])
@@ -58,7 +63,8 @@ const Result = ({
     setPersons2Loaded(true)
   }, [])
 
-  const loded = backgroundLoaded && persons1Loaded && (!persons2ImgSrc || persons2Loaded)
+  const loded =
+    inputLoaded && backgroundLoaded && persons1Loaded && (!persons2ImgSrc || persons2Loaded)
 
   return (
     <div className={styles.wrapper}>
@@ -112,6 +118,7 @@ const Result = ({
           className={classnames(styles.img, styles.baseImg, {
             [styles.hide]: loded,
           })}
+          onLoad={handleInputLoad}
         />
       </ImageBox>
       <ThanosGlove
