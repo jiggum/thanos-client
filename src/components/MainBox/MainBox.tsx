@@ -5,13 +5,20 @@ import { useSnackbar } from 'notistack'
 import { getUrlWithTimeStamp } from 'utils'
 import DropZone from 'components/DropZone'
 import Result from 'components/Result'
+import sampleImgPaths from 'constants/sampleImgPaths'
 import styles from './MainBox.scss'
 
+const USE_SAMPLE = true
+
+const sampleImgPath = sampleImgPaths[Math.floor(Math.random() * sampleImgPaths.length)]
+
 const MainBox = () => {
-  const [inputImgSrc, setInputImgSrc] = useState('')
-  const [backgroundImgSrc, setBackgroundImgSrc] = useState('')
-  const [persons1ImgSrc, setPersons1ImgSrc] = useState('')
-  const [persons2ImgSrc, setPersons2ImgSrc] = useState('')
+  const [inputImgSrc, setInputImgSrc] = useState(USE_SAMPLE ? sampleImgPath.input : '')
+  const [backgroundImgSrc, setBackgroundImgSrc] = useState(
+    USE_SAMPLE ? sampleImgPath.background : '',
+  )
+  const [persons1ImgSrc, setPersons1ImgSrc] = useState(USE_SAMPLE ? sampleImgPath.person1 : '')
+  const [persons2ImgSrc, setPersons2ImgSrc] = useState(USE_SAMPLE ? sampleImgPath.person2 : '')
   const [pending, setPending] = useState(false)
   const { enqueueSnackbar } = useSnackbar()
 
