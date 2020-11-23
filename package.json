@@ -1,6 +1,6 @@
 {
   "name": "thanossnap",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Client for https://thanossnap.org",
   "main": "dist/index.html",
   "config": {
@@ -51,9 +51,9 @@
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-dropzone": "^10.2.1",
-    "react-dust-effect": "^0.0.6",
+    "react-dust-effect": "^0.0.7",
     "react-image-file-resizer": "^0.2.1",
-    "react-thanos-glove": "^0.0.6"
+    "react-thanos-glove": "^0.0.7"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
