@@ -1,5 +1,5 @@
 > [Backend repo is here](https://github.com/jiggum/thanos-server)
-# [THANOSSNAP.ORG](https://thanossnap.org)
+# [THANOSSNAP.ORG](https://d23jzln6ucpirz.cloudfront.net)
 
 <p align="center">
   <img width="525" height="56" src="https://s3.ap-northeast-2.amazonaws.com/thanos.jiggum/assets/logo.png">

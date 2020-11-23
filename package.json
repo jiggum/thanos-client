@@ -1,7 +1,7 @@
 {
   "name": "thanossnap",
   "version": "1.0.3",
-  "description": "Client for https://thanossnap.org",
+  "description": "Client for https://d23jzln6ucpirz.cloudfront.net",
   "main": "dist/index.html",
   "config": {
     "prettier_target": "./*.{ts,js} ./**/*.{ts,tsx} !./dist/**",
@@ -37,7 +37,7 @@
   "bugs": {
     "url": "https://github.com/jiggum/thanos-client/issues"
   },
-  "homepage": "https://thanossnap.org",
+  "homepage": "https://d23jzln6ucpirz.cloudfront.net",
   "browserslist": [
     "last 2 version",
     "> 1%",
