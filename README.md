@@ -2,17 +2,17 @@
 # [THANOSSNAP.ORG](https://thanossnap.org)
 
 <p align="center">
-  <img width="525" height="56" src="http://thanos.jiggum.s3.amazonaws.com/assets/logo.png">
+  <img width="525" height="56" src="https://s3.ap-northeast-2.amazonaws.com/thanos.jiggum/assets/logo.png">
 </p>
 <br />
 <p align="center">
-  <img width="400" height="252" src="http://thanos.jiggum.s3.amazonaws.com/assets/preview-half.gif">
+  <img width="400" height="252" src="https://s3.ap-northeast-2.amazonaws.com/thanos.jiggum/assets/preview-half.gif">
 </p>
 
 
 ## Example Cases
 <p align="center">
-  <img src="http://thanos.jiggum.s3.amazonaws.com/assets/results.png">
+  <img src="https://s3.ap-northeast-2.amazonaws.com/thanos.jiggum/assets/results.png">
 </p>
 
 
